@@ -1,8 +1,12 @@
 import { Coinlists } from "../types";
 
-const CoinSummary = (props: Coinlists) => {
-  const { name, current_price } = props;
-  return <p>{`${name} --- ${current_price}`}</p>;
+type PropsTypes = {
+  coin: Coinlists;
+};
+
+const CoinSummary = ({ coin }: PropsTypes) => {
+  const { name, current_price } = coin;
+  return <p>{`${name} --- $${current_price}`}</p>;
 };
 
 export default CoinSummary;
